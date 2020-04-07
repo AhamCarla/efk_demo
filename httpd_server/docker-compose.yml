@@ -1,0 +1,12 @@
+version: '3'
+services:
+  http_server:
+    image: httpd
+    container_name: http_server
+    ports:
+      - "8088:80"
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: httpd_server
